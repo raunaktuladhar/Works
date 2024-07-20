@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=/, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Login Form</h1>
+    <input type="text" id="username" placeholder="Username"><br>
+    <input type="password" id="pass" placeholder="Password"><br>
+    <input type="submit" onclick="sub()"><br>
+    <script>
+
+        function sub() {
+            var user = document.getElementById('username').value;
+            var pass = document.getElementById('pass').value;
+            if (user == "" && pass == "") {
+                alert("your user or password is empty");
+            }
+            else if (user.length > 10) {
+                alert("username cannot can be more than 10");
+            }
+            else if (pass.length < 5) {
+                alert("password should be more than 5");
+            }
+            else {
+                alert("Raunak says hello!");
+            }
+
+        }
+    </script>
+</body>
+
+</html>

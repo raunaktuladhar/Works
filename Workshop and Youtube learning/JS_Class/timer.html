@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="h" max="10" min="0" placeholder="Hour">
+    <input type="number" id="m" max="60" min="0" placeholder="Min">
+    <input type="number" id="s" max="60" min="0" placeholder="Sec">
+    <button onclick="startInterval()" id="start">START</button>
+    <button  id="reset" onclick="res()">Reset</button>
+
+    <script>
+        // var start = document.getElementById("start");
+        // var reset = document.getElementById("res")
+        var h = document.getElementById("h");
+        var m = document.getElementById("m");
+        var s = document.getElementById("s");
+
+        var startTimer = null;
+
+        function stopTimer(){
+            clearInterval(startTimer);
+        }
+        function timer(){
+            if(h.value==0 & m.value==0 && s.value==0){
+                h.value = 0;
+                m.value = 0;
+                s.value = 0;
+            }
+            else if(s.value!=0){
+                s.value--;
+            }
+            else if(m.value!=0 && s.value==0){
+                s.value = 59;
+                m.value--;
+            }
+            else if(h.value!=0 && m.value==0){
+                m.value = 60;
+                h.value--;
+            }
+        }
+        function startInterval(){
+            startTimer = setInterval(function(){
+                timer();
+            } , 1000);
+        }
+        function res(){
+            h.value = 0;
+            m.value = 25;
+            s.value = 0;
+            stopTimer();
+        }
+    </script>
+
+
+</body>
+</html>
