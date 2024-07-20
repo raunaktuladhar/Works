@@ -1,0 +1,41 @@
+<!-- Most of the programs we deal with on a daily basis are dependent on user interaction. 
+The user enters data, makes choices, and confirms the options given by the program. 
+Thanks to this interaction, 
+the program can start to use the data that is provided to it by the user during its execution 
+(this data was not known when the program was started, nor was it known when it was written). 
+Secondly, the program can perform certain actions conditionally, 
+in other words, the user influences not only the data, but also its execution.
+
+A simple example is the calculator program. The user not only enters data (e.g. the numbers 10 and 20), 
+but also decides what to do with it (e.g. sum up).
+
+In the case of JS, interaction with the user is quite a complex topic. This is for several reasons.
+Do you remember that we can write programs in this language both for use in the browser (client-side) 
+and to perform certain actions on the server-side? 
+This division influences the potential interaction. 
+JS programs written with node.js for servers usually do not require such an interaction. 
+We run them from the console level, often without a graphic environment.
+
+This is definitely different for client-side applications. 
+In most cases, they require continuous interaction between the user and the program. 
+Using them, we can click on buttons, enter values into forms, select data from drop-down lists, and so on. 
+The problem is that practically all elements used for this purpose are HTML components. 
+Using them may not be very difficult, 
+but it does require at least a thorough understanding of the basics of the DOM (Document Object Model) 
+used in web pages, and the basics of HTML itself. 
+
+An example of an HTML page that uses two elements for interaction, for which JavaScript code is used, is shown below: -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="myID" type="text">
+    <button onclick="console.log(document.getElementById('myID').value)">Get Text</button>
+</body>
+</html>
+
